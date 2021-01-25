@@ -3,6 +3,7 @@ package com.example.filedemo.service;
 import com.example.filedemo.exception.FileStorageException;
 import com.example.filedemo.exception.MyFileNotFoundException;
 import com.example.filedemo.property.FileStorageProperties;
+import com.example.filedemo.property.FileStorageProperties1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
@@ -23,7 +24,7 @@ public class FileStorageService1 {
     private final Path fileStorageLocation;
 
     @Autowired
-    public FileStorageService1(FileStorageProperties fileStorageProperties) {
+    public FileStorageService1(FileStorageProperties1 fileStorageProperties) {
         this.fileStorageLocation = Paths.get(fileStorageProperties.getUploadDir())
                 .toAbsolutePath().normalize();
 
